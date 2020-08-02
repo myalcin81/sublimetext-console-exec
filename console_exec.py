@@ -7,8 +7,8 @@ Plugin for Sublime Text 2 & 3 to execute a command and redirect its output
 into a console window. This is based on the default exec command.
 """
 
-import os	
-import subprocess	
+import os
+import subprocess
 import sublime
 import sublime_plugin
 from sys import platform
@@ -46,7 +46,7 @@ class ConsoleExecCommand(sublime_plugin.WindowCommand):
             pause = 'bash -c \'read -p "Press [Enter] to continue..."\''
             # console_cmd = console + ['{} ; {}'.format(escaped_cmd, pause)]
             # console_cmd = console
-            console_cmd = ['osascript', '-e', ('tell application "Terminal"\n    tell application "Terminal" to do script "{0}"\n    activate\nend tell').format(escaped_cmd)]
+            console_cmd = ['osascript', '-e', ('tell application "Terminal"\ndo script "{0}"\nactivate\nend tell').format(escaped_cmd)]
         else:
             sublime.message_dialog('Console Exec: It appears your platform is not supported, please submit a GitHub issue')
 
