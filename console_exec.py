@@ -7,6 +7,9 @@ Plugin for Sublime Text 2 & 3 to execute a command and redirect its output
 into a console window. This is based on the default exec command.
 """
 
+import os	
+import subprocess	
+import sublime
 import sublime_plugin
 from sys import platform
 
